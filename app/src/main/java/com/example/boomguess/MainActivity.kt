@@ -21,20 +21,27 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun restart() {
+    var min = 1
+    var max = 100
+    var count = 0  //猜的次數
+    var boom = Random.nextInt(100)
+
+    fun Restart() {
+        min = 1
+        max = 100
+        count = 0  //猜的次數
+        boom = Random.nextInt(100)
+            //嘗試清空.text("")
 
     }
 
-    var min = 1
-    var max = 100
-    var boom = Random.nextInt(100)
     fun inputnum(view: View) {
         var num = binding.guessnum.text.toString().toInt()
-
+        count++
         val builder = AlertDialog.Builder(this)//產生builder物件
 
         Log.d("tips", boom.toString())
-        Toast.makeText(this, boom.toString(), Toast.LENGTH_LONG).show()//小訊息顯示較長時間的num值
+        Toast.makeText(this, boom.toString(), Toast.LENGTH_SHORT).show()//小訊息顯示較短時間的num值
 
         if (num != boom) {
             when {
@@ -54,15 +61,16 @@ class MainActivity : AppCompatActivity() {
                 .setPositiveButton("再玩一次") { dialog, which ->   //選了對話按鈕後要做的事情
                     Toast.makeText(
                         this,
-                        "BOOOOOOM",
-                        Toast.LENGTH_SHORT
+                        "炸彈已重設",
+                        Toast.LENGTH_LONG
                     ).show()
+                    Restart()
                 }//對話ok按鈕
                 .show() //顯示對話筐
+
         }
-
-
     }
+
 
 }
 
