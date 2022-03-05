@@ -31,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         max = 100
         count = 0  //猜的次數
         boom = Random.nextInt(100)
-            //嘗試清空.text("")
+        binding.guessnum.text.clear()//元件訊息框guessnum文字的清除
+
 
     }
 
@@ -53,18 +54,20 @@ class MainActivity : AppCompatActivity() {
                 .setTitle("終極密碼")//標題文字
                 .setPositiveButton("我再想想", null)//對話ok按鈕
                 .show() //顯示對話筐
+            binding.guessnum.text.clear()
         } else if (num == boom) {
 
             AlertDialog.Builder(this)
                 .setMessage("恭喜爆炸")//相當於印出字print
                 .setTitle("終極密碼")//標題文字
                 .setPositiveButton("再玩一次") { dialog, which ->   //選了對話按鈕後要做的事情
+                    Restart()
+
                     Toast.makeText(
                         this,
                         "炸彈已重設",
                         Toast.LENGTH_LONG
                     ).show()
-                    Restart()
                 }//對話ok按鈕
                 .show() //顯示對話筐
 
