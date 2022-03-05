@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                 num < boom -> min = num
             }
             AlertDialog.Builder(this)
-                .setMessage("請輸入$min 到$max")//相當於印出字print
+                .setMessage("請輸入$min 到$max ,已嘗試$count 次" )//相當於印出字print
                 .setTitle("終極密碼")//標題文字
                 .setPositiveButton("我再想想", null)//對話ok按鈕
                 .show() //顯示對話筐
