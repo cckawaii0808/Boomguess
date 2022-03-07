@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         count = 0  //猜的次數
         boom = Random.nextInt(100)
         binding.guessnum.text.clear()//元件訊息框guessnum文字的清除
+        binding.counter.text=("0")
 
 
     }
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     fun inputnum(view: View) {
         var num = binding.guessnum.text.toString().toInt()
         count++
+        binding.counter.text=("$count")
         val builder = AlertDialog.Builder(this)//產生builder物件
 
         Log.d("tips", boom.toString())
@@ -60,7 +62,8 @@ class MainActivity : AppCompatActivity() {
             AlertDialog.Builder(this)
                 .setMessage("恭喜爆炸")//相當於印出字print
                 .setTitle("終極密碼")//標題文字
-                .setPositiveButton("再玩一次") { dialog, which ->   //選了對話按鈕後要做的事情
+                .setPositiveButton("再玩一次") { dialog, which ->//選了對話按鈕後要做的事情
+                    //也可以 .setPositiveButton("再玩一次") { d, w ->
                     Restart()
 
                     Toast.makeText(
