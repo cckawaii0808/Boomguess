@@ -9,7 +9,7 @@ class NumberGame {
 
     }    //列舉
     init{
-        reset()    //要在建構子用發法用init
+        reset()    //要在建構子用方法用init
     }
     fun reset() {
         secret = (1..10).random()
@@ -25,7 +25,6 @@ class NumberGame {
             end = true
             GameStage.BINGO
         }
-
      return  message
 
 

@@ -1,14 +1,13 @@
 <resources>
-    <string name="app_name">Boomguess</string>
-    <string name="dialog_title">終極密碼</string>
-    <string name="please_enter_1_100">請輸入數字1–100</string>
-    <string name="guess_what">猜看看</string>
+    <string name="app_name">guessnum</string>
+    <string name="dialog_title">BoomGame</string>
+    <string name="guess_what">guess</string>
     <string name="guess_time">0</string>
     <string name="smaller">smaller</string>
     <string name="bigger">bigger</string>
     <string name="bingo">bingo</string>
-    <string name="someingmistake">有些錯誤</string>
-    <string name="guess_time_title">猜測次數</string>
-
-
+    <string name="some_mistake">some_mistake</string>
+    <string name="guess_time_title">coutter_time</string>
+    <string name="please_enter_1_100">please Enter!１-100</string>
+    <string name="guesskey">guesskey</string>
 </resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Boomguess</string>
+    <string name="please_enter_1_100">請輸入數字1–100</string>
+    <string name="guess_what">猜看看</string>
+    <string name="guess_time">0</string>
+    <string name="smaller">小一點</string>
+    <string name="bigger">大一點</string>
+    <string name="bingo">答對了</string>
+    <string name="some_mistake">有些錯誤</string>
+    <string name="guess_time_title">猜測次數</string>
+    <string name="dialog_title">終極密碼</string>
+    <string name="guesskey">終極密碼</string>
+</resources>

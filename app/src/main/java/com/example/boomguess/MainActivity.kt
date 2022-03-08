@@ -87,7 +87,7 @@ fun inputnum(view:View) {
             NumberGame.GameStage.BINGO->getString(R.string.bingo)
 
 
-            else -> {getString(R.string.someingmistake)}
+            else -> {getString(R.string.some_mistake)}
         }
        AlertDialog.Builder(this)
           // .setMessage(game.inputnum(num))//相當於印出字print
