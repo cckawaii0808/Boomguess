@@ -80,9 +80,20 @@ class MainActivity : AppCompatActivity() {
         */
 fun inputnum(view:View) {
     val num =binding.guessnum.text.toString().toInt()
+        val state =game.inputnum(num)
+        val message=when(state){
+            NumberGame.GameStage.BIGGER->getString(R.string.bigger)
+            NumberGame.GameStage.SMALLER->getString(R.string.smaller)
+            NumberGame.GameStage.BINGO->getString(R.string.bingo)
+
+
+            else -> {getString(R.string.someingmistake)}
+        }
        AlertDialog.Builder(this)
-           .setMessage(game.inputnum(num))//相當於印出字print
-           .setTitle("終極密碼")//標題文字
+          // .setMessage(game.inputnum(num))//相當於印出字print
+           //.setTitle("終極密碼")//標題文字
+           .setMessage(message)
+           .setTitle(resources.getString(R.string.dialog_title))//resource可刪除 /alt+enter 可以快速抽字串
            .setPositiveButton("OK") { dialog, which ->//選了對話按鈕後要做的事情
                if(game.end)game.reset()
                Toast.makeText(
@@ -93,14 +104,14 @@ fun inputnum(view:View) {
 
            }//對話ok按鈕
            .show() //顯示對話筐
-        binding.counter.text=game.counter.toString()
-
-
-
-
+        updateUI() //ctrl+alt+M 鍵= 抽出當方法
 
 
 }
+
+    private fun updateUI() {
+        binding.counter.text = game.counter.toString()
+    }
 
 }
 
